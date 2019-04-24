@@ -1,4 +1,4 @@
-{% set version = "2.29" %}
+{% set version = '2.29' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -15,7 +15,6 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 0
-  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,8 +26,6 @@ requirements:
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
-    - {{posix}}sed  # [win]
-    - {{posix}}coreutils  # [win]
     - {{posix}}sed               # [win]
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
@@ -58,16 +55,28 @@ test:
 about:
   home: https://CRAN.R-project.org/package=MCMCglmm
   license: GPL (>= 2)
-  summary: 'MCMC Generalised Linear Mixed Models.'
+  summary: 'MCMC Generalised Linear Mixed Models. '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - nick-youngblut
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: MCMCglmm
+# Version: 2.29
+# Date: 2019-04-16
+# Title: MCMC Generalised Linear Mixed Models
+# Depends: Matrix, coda, ape
+# Imports: corpcor, tensorA, cubature, methods
+# Suggests: rgl, combinat, mvtnorm, orthopolynom
+# Author: Jarrod Hadfield
+# Maintainer: Jarrod Hadfield <j.hadfield@ed.ac.uk>
+# Description: MCMC Generalised Linear Mixed Models.
+# License: GPL (>= 2)
+# SystemRequirements: C++11
+# NeedsCompilation: yes
+# Packaged: 2019-04-17 15:03:49 UTC; jhadfiel
+# Repository: CRAN
+# Date/Publication: 2019-04-24 10:50:07 UTC
