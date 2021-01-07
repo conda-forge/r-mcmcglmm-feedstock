@@ -3,7 +3,7 @@ About r-mcmcglmm
 
 Home: https://CRAN.R-project.org/package=MCMCglmm
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mcmcglmm-feedstock/blob/master/LICENSE.txt)
 
