@@ -55,10 +55,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=MCMCglmm
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: 'MCMC Generalised Linear Mixed Models. '
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
