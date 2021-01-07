@@ -1,4 +1,4 @@
-{% set version = '2.29' %}
+{% set version = "2.30" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MCMCglmm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MCMCglmm/MCMCglmm_{{ version }}.tar.gz
-  sha256: 13ba7837ea2049e892c04e7ec5c83d5b599a7e4820b9d875f55ec40fc2cc67b4
+  sha256: 714250fe6ebdd1bd3dc284f7fcb92326de1273b0c34d31e71dc825312527e042
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -55,10 +55,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=MCMCglmm
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: 'MCMC Generalised Linear Mixed Models. '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
