@@ -1,4 +1,4 @@
-{% set version = "2.31" %}
+{% set version = "2.32" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/MCMCglmm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/MCMCglmm/MCMCglmm_{{ version }}.tar.gz
-  sha256: ae8a3830ba5bd54b069c703245e3ae2f6ce70d0170be0ca6cff33147159f717d
+  sha256: a9156e1e0d0f912f2f239476dc8765dc61c480f903381be7ec5db05bd6d3f0b3
 
 build:
   merge_build_host: true  # [win]
