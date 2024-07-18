@@ -1,6 +1,5 @@
 {% set version = "2.36" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-mcmcglmm
@@ -13,8 +12,7 @@ source:
   sha256: 66ffd9aaf8035c7abe7208c8514c60cb56c8c6a170de207d6608f5c44a4f8af1
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -42,7 +40,6 @@ requirements:
     - r-tensora
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-matrix
     - r-ape
     - r-coda
