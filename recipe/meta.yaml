@@ -12,7 +12,7 @@ source:
   sha256: 66ffd9aaf8035c7abe7208c8514c60cb56c8c6a170de207d6608f5c44a4f8af1
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,6 +30,13 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-matrix                     # [build_platform != target_platform]
+    - r-ape                        # [build_platform != target_platform]
+    - r-coda                       # [build_platform != target_platform]
+    - r-corpcor                    # [build_platform != target_platform]
+    - r-cubature                   # [build_platform != target_platform]
+    - r-tensora                    # [build_platform != target_platform]
   host:
     - r-base
     - r-matrix
@@ -56,7 +63,6 @@ about:
   home: https://CRAN.R-project.org/package=MCMCglmm
   license: GPL-2.0-or-later
   summary: 'MCMC Generalised Linear Mixed Models. '
-  license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
